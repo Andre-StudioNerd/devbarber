@@ -91,16 +91,18 @@ i {
   content: "";
   position: absolute;
   inset: 0;
- background-image:
-  linear-gradient(
-    rgba(6, 18, 30, 0.35),
-    rgba(6, 18, 30, 0.35)
-  ),
-  url("./assets/bg.svg");
+
+  background-image:
+    linear-gradient(
+      rgba(6, 18, 30, 0.25),
+      rgba(6, 18, 30, 0.25)
+    ),
+    url("./assets/bg.svg");
+
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 0;
-  opacity: 0.9;
+  background-position: center;
+
   z-index: -1;
 }
 

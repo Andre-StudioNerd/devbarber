@@ -17,7 +17,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Preload dos recursos críticos para evitar bloqueio de renderização -->
+  <!-- Preloads Críticos (Imagens de topo e Fontes essenciais) -->
+  <link rel="preload" href="assets/bg.svg" as="image" fetchpriority="high" />
   <link
     rel="preload"
     href="webfonts/fa-brands-400.woff2"
@@ -25,27 +26,45 @@
     type="font/woff2"
     crossorigin
   />
-  <link
-    rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap"
-    as="style"
-  />
-  <link rel="preload" href="assets/bg.svg" as="image" fetchpriority="high" />
 
   <!-- Favicons -->
   <link href="assets/favicon.png" rel="icon" />
   <link href="assets/favicon.png" rel="apple-touch-icon" />
 
-  <!-- Estilos e Fontes -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="css/all.min.css" />
+  <!-- Estilo Principal (Carregamento imediato/bloqueante apenas para o CSS base do site) -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="aos/aos.css" />
 
-  <!-- Scripts assíncronos que não bloqueiam o DOM -->
+  <!-- Estilos Secundários Assíncronos (Não bloqueiam a renderização da tela) -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap"
+    media="print"
+    onload="this.media='all'"
+  />
+  <link
+    rel="stylesheet"
+    href="css/all.min.css"
+    media="print"
+    onload="this.media='all'"
+  />
+  <link
+    rel="stylesheet"
+    href="aos/aos.css"
+    media="print"
+    onload="this.media='all'"
+  />
+
+  <!-- Fallback sem JS -->
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="aos/aos.css" />
+  </noscript>
+
+  <!-- Scripts Assíncronos -->
   <script src="aos/aos.js" defer></script>
 </head>
   <body>

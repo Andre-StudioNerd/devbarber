@@ -5,6 +5,18 @@
   outline: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #06121e;
+}
+
 header {
   width: 100%;
 }
@@ -16,7 +28,7 @@ header {
 }
 
 i {
-  color: #FFF;
+  color: #fff;
 }
 
 .header-icons {
@@ -33,15 +45,17 @@ i {
   from {
     transform: translateY(0) scale(1);
   }
+
   to {
     transform: translateY(-8px) scale(1.1);
   }
 }
+
 .header-button {
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   padding: 8px 24px;
   border-radius: 4px;
-  color: #FFF;
+  color: #fff;
   background-color: transparent;
   transition: background-color 0.8s;
 }
@@ -58,53 +72,45 @@ i {
   margin-top: 14px;
 }
 
-@media screen and (max-width: 768px) {
-  .header-content {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .header-content i {
-    margin-top: 16px;
-    font-size: 34px;
-  }
-  .header-logo img {
-    width: 160px;
-    margin-top: 46px;
-  }
-  .header-button {
-    display: none;
-  }
-}
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 8px;
 }
 
+/* =========================================
+   BACKGROUND PRINCIPAL
+   ========================================= */
+
 .bg-home {
   position: relative;
+  isolation: isolate;
 }
 
 .bg-home::before {
   content: "";
-  display: block;
   position: absolute;
-  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("./assets/bg.svg");
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(6, 18, 30, 0.1),
+      #06121e
+    ),
+    url("./assets/bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0;
   opacity: 0.9;
+  z-index: -1;
 }
 
+/* =========================================
+   HERO
+   ========================================= */
+
 .hero {
-  color: #FFF;
+  color: #fff;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -112,25 +118,30 @@ i {
   justify-content: center;
   padding: 14px;
 }
+
 .hero h1 {
   text-align: center;
   line-height: 150%;
   max-width: 940px;
   font-size: 46px;
 }
+
 .hero p {
   text-align: center;
   margin: 14px 0;
 }
 
 .button-contact {
+  display: inline-block;
   padding: 14px 28px;
-  color: #FFF;
+  color: #fff;
   background-color: #d94140;
   border: 0;
+  border-radius: 4px;
   font-size: 18px;
   font-weight: 600;
   margin: 14px 0;
+  transition: transform 0.3s ease;
 }
 
 .button-contact:hover {
@@ -141,32 +152,20 @@ i {
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(1.07);
   }
 }
-@media screen and (max-width: 768px) {
-  .hero {
-    min-height: 60vh;
-  }
-  .hero h1 {
-    font-size: 34px;
-    padding: 0 14px;
-    width: 100%;
-  }
-  .hero p {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .hero h1 {
-    font-size: 24px;
-  }
-}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
 .about {
   background-color: #06121e;
   overflow: hidden;
-  color: #FFF;
+  color: #fff;
 }
 
 .about-content {
@@ -176,6 +175,7 @@ i {
   gap: 14px;
   padding: 34px 14px 64px 14px;
 }
+
 .about-content img {
   max-width: 570px;
 }
@@ -188,18 +188,18 @@ i {
   font-size: 38px;
   margin-bottom: 24px;
 }
+
 .about-description p {
   margin-bottom: 14px;
   line-height: 150%;
 }
 
-@media screen and (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-  }
-}
+/* =========================================
+   SERVIÇOS
+   ========================================= */
+
 .services {
-  background-color: #FFF;
+  background-color: #fff;
   color: #232224;
   display: flex;
   flex-direction: column;
@@ -228,17 +228,19 @@ i {
   align-items: center;
   gap: 16px;
   padding: 0 44px 34px 44px;
+  width: 100%;
 }
 
 .haircut {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
   overflow: hidden;
 }
+
 .haircut img {
   width: 100%;
   max-width: 354px;
@@ -254,13 +256,14 @@ i {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 14px;
-  background-color: #FFF;
+  background-color: #fff;
   z-index: 99;
 }
 
 .haircut-info button {
-  color: #FFF;
+  color: #fff;
   background-color: #d94140;
   padding: 4px 8px;
   border-radius: 4px;
@@ -268,14 +271,30 @@ i {
   cursor: default;
 }
 
-@media screen and (max-width: 768px) {
-  .haircuts {
-    flex-direction: column;
-  }
-  .haircut img {
-    max-width: 740px;
-  }
+/* =========================================
+   LOCALIZAÇÃO / MAPA
+   ========================================= */
+
+.location {
+  width: 100%;
+  background-color: #fff;
 }
+
+.location .services {
+  padding-bottom: 30px;
+}
+
+.location iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -283,14 +302,30 @@ i {
   justify-content: center;
   padding: 54px 0;
   gap: 24px;
-  color: #FFF;
+  color: #fff;
+  background-color: #06121e;
+  text-align: center;
 }
 
 .footer-icons {
   display: flex;
   gap: 8px;
-  color: #FFF;
+  color: #fff;
 }
+
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icons a:hover i {
+  color: #d34040;
+}
+
+/* =========================================
+   BOTÃO WHATSAPP
+   ========================================= */
 
 .btn-whatsapp {
   position: fixed;
@@ -298,10 +333,12 @@ i {
   right: 24px;
   z-index: 99;
 }
+
 .btn-whatsapp img {
   max-width: 74px;
   transition: transform 0.4s;
 }
+
 .btn-whatsapp img:hover {
   transform: scale(1.1);
 }
@@ -316,7 +353,7 @@ i {
   border-radius: 8px;
   text-align: center;
   background-color: #232224;
-  color: #FFF;
+  color: #fff;
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -326,18 +363,9 @@ i {
   opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
-  .btn-whatsapp img {
-    max-width: 64px;
-  }
-}
-body {
-  font-family: "Sora", sans-serif;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-color: #06121e;
-}
+/* =========================================
+   ELEMENTOS GERAIS
+   ========================================= */
 
 button {
   font-family: "Sora", sans-serif;
@@ -349,10 +377,132 @@ svg {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
   cursor: pointer;
   text-decoration: none;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* =========================================
+   RESPONSIVIDADE - 768px
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+  .header-content {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-content i {
+    margin-top: 16px;
+    font-size: 34px;
+  }
+
+  .header-logo img {
+    width: 160px;
+    margin-top: 46px;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    padding: 0 14px;
+    width: 100%;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-content img {
+    width: 100%;
+    max-width: 570px;
+  }
+
+  .haircuts {
+    flex-direction: column;
+    padding: 0 20px 34px 20px;
+  }
+
+  .haircut {
+    width: 100%;
+  }
+
+  .haircut img {
+    width: 100%;
+    max-width: 740px;
+  }
+
+  .btn-whatsapp img {
+    max-width: 64px;
+  }
+
+  .btn-whatsapp {
+    right: 16px;
+    bottom: 14px;
+  }
+}
+
+/* =========================================
+   RESPONSIVIDADE - 480px
+   ========================================= */
+
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .about-description h2 {
+    font-size: 30px;
+  }
+
+  .services-content h2 {
+    font-size: 30px;
+  }
+
+  .services {
+    padding: 40px 14px;
+  }
+
+  .haircuts {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .haircut-info {
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 40px 14px;
+  }
+
+  .btn-whatsapp img {
+    max-width: 58px;
+  }
+
+  .btn-whatsapp {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .btn-whatsapp .tooltip-text {
+    display: none;
+  }
+}
